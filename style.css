@@ -595,6 +595,184 @@ footer {
     margin-top: 20px;
     color: #e74c3c;
 }
+/* --- Product Detail Modal --- */
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .product-detail-grid {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+.product-detail-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-detail-info h2 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.product-detail-info .price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.product-detail-info .description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.product-detail-info .size-selector {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-detail-info .size-selector label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.product-detail-info .size-selector select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* View Details Link */
+.view-details-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 5px auto 15px;
+    padding: 6px 14px;
+    border: 2px solid #3498db;
+    border-radius: 20px;
+    color: #3498db;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* --- Modern Size Selector --- */
+.size-selector-modern {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 0 15px; /* Add padding to align with other content */
+}
+
+.size-selector-modern .size-label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.size-option {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.size-option:hover {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.size-option.selected {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* --- Modern Add to Cart Button --- */
+.modern-cart-btn {
+    position: relative;
+    width: 90%;
+    max-width: 250px;
+    height: 45px;
+    margin: 15px auto;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.modern-cart-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    transform: translateY(-3px);
+}
+
+.modern-cart-btn .btn-text {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.modern-cart-btn .btn-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Loading State */
+.modern-cart-btn.loading {
+    cursor: wait;
+    background-color: #95a5a6;
+}
+
+.modern-cart-btn.loading .btn-text {
+    opacity: 0;
+}
+
+.modern-cart-btn.loading .btn-icon {
+    animation: spin 1s linear infinite;
+}
+
+/* Success State */
+.modern-cart-btn.success {
+    background-color: #2ecc71;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
